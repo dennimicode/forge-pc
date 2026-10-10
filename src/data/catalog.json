@@ -1,0 +1,13 @@
+{
+  "products": [
+    { "id": "core", "name": "CORE", "tag": "ТВОЙ ПЕРВЫЙ FORGE", "category": "game", "price": 109900, "cpu": "AMD Ryzen 5 7500F", "gpu": "GeForce RTX 4060 · 8 ГБ", "ram": "32 ГБ DDR5", "ssd": "1 ТБ NVMe", "board": "B650 · AM5", "psu": "750 Вт · 80 PLUS Gold", "description": "Для вечерних каток, учёбы и всего, что между ними.", "color": "#fd742c" },
+    { "id": "pulse", "name": "PULSE", "tag": "ЗОЛОТАЯ СЕРЕДИНА", "category": "game", "price": 169900, "cpu": "AMD Ryzen 7 7700", "gpu": "GeForce RTX 4070 SUPER · 12 ГБ", "ram": "32 ГБ DDR5", "ssd": "1 ТБ NVMe", "board": "B650 · AM5", "psu": "750 Вт · 80 PLUS Gold", "description": "Больше деталей в игре. Больше свободы за её пределами.", "color": "#b8adff" },
+    { "id": "studio", "name": "STUDIO", "tag": "СОЗДАВАЙ БОЛЬШЕ", "category": "work", "price": 199900, "cpu": "AMD Ryzen 9 7900", "gpu": "GeForce RTX 4070 SUPER · 12 ГБ", "ram": "32 ГБ DDR5", "ssd": "1 ТБ NVMe", "board": "B650 · AM5", "psu": "750 Вт · 80 PLUS Gold", "description": "Рабочее пространство для монтажа, 3D и больших идей.", "color": "#91dfcb" },
+    { "id": "daily", "name": "DAILY", "tag": "РАБОЧИЙ РИТМ", "category": "work", "price": 129900, "cpu": "AMD Ryzen 7 7700", "gpu": "GeForce RTX 4060 · 8 ГБ", "ram": "32 ГБ DDR5", "ssd": "1 ТБ NVMe", "board": "B650 · AM5", "psu": "750 Вт · 80 PLUS Gold", "description": "Код, проекты и десятки вкладок. Всё в одном ритме.", "color": "#82b7f4" }
+  ],
+  "upgrades": {
+    "ram": [{ "id": "32", "label": "32 ГБ DDR5", "price": 0 }, { "id": "64", "label": "64 ГБ DDR5", "price": 10000 }],
+    "ssd": [{ "id": "1", "label": "1 ТБ NVMe", "price": 0 }, { "id": "2", "label": "2 ТБ NVMe", "price": 7000 }],
+    "case": [{ "id": "black", "label": "Graphite Black", "price": 0 }, { "id": "white", "label": "Arctic White", "price": 3000 }]
+  }
+}
