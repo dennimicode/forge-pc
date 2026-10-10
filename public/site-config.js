@@ -13,7 +13,7 @@ window.FORGE_CONFIG = {
     liveInternet: { enabled: true, badgeStyle: '52.7', statUrl: 'https://www.liveinternet.ru/stat/dennimicode.github.io/forge-pc/index.html' },
     // USER_ACTION [RAMBLER]: создайте счётчик на https://top100.rambler.ru/ и впишите project ID.
     // Включите рейтинг и расширенные возможности; события config_selected и order_created отметьте как конверсии.
-    rambler: { id: '', badgeUrl: '' },
+    rambler: { id: '7752726', badgeUrl: '' },
     // USER_ACTION [MAIL]: создайте счётчик на https://top.mail.ru/ и две JS-цели:
     // config_selected и order_created (имена точные). badgeUrl — URL картинки из выданного кода.
     // order_created означает создание учебной заявки в браузере, без отправки владельцу.
