@@ -12,14 +12,16 @@ window.FORGE_CONFIG = {
     // Это особенно важно при регистрации папки username.github.io/repository/.
     liveInternet: { enabled: true, badgeStyle: '52.7', statUrl: 'https://www.liveinternet.ru/stat/dennimicode.github.io/forge-pc/index.html' },
     // USER_ACTION [RAMBLER]: создайте счётчик на https://top100.rambler.ru/ и впишите project ID.
-    // Включите рейтинг и расширенные возможности; события config_selected и order_created отметьте как конверсии.
-    rambler: { id: '7752726', badgeUrl: '' },
+    // USER_ACTION [RAMBLER WIDGET]: widgetColor — цвет без #; fe9200 оранжевый, 000000 чёрный.
+    // При пустом badgeUrl официальный SDK автоматически выводит картинку в подвале.
+    // Цели создаются в статистике сайта: «Отчёты по целям», не в настройках счётчика.
+    rambler: { id: '7752726', widgetColor: 'fe9200', badgeUrl: '' },
     // USER_ACTION [MAIL]: создайте счётчик на https://top.mail.ru/ и две JS-цели:
     // config_selected и order_created (имена точные). badgeUrl — URL картинки из выданного кода.
     // order_created означает создание учебной заявки в браузере, без отправки владельцу.
     mail: { id: '', badgeUrl: '' },
-    // USER_ACTION [WIDGETS]: Rambler/Mail badgeUrl скопируйте из официального кода виджета (HTTPS).
-    // Без URL в подвале показывается текстовая ссылка, без фиктивных чисел.
+    // USER_ACTION [WIDGETS]: только для Mail скопируйте HTTPS-адрес картинки в badgeUrl.
+    // Для Rambler картинку рисует SDK; badgeUrl нужен лишь для замены собственным официальным URL.
     debug: false, // true: обезличенные события в консоли для проверки; не отправляет данные само по себе.
   },
 }

@@ -2,6 +2,7 @@
 // MPA: каждый HTML загружается отдельно. Один просмотр на загрузку, без дублирования SPA-хитов.
 const cfg = () => window.FORGE_CONFIG?.analytics || {}
 const validID = id => /^\d+$/.test(String(id || ''))
+const ramblerWidgetID = 'forge-rambler-widget'
 let initialized = false
 const pending = []
 export function getConsent() {try{return localStorage.getItem('forge-analytics-consent')}catch{return null}}
@@ -36,8 +37,17 @@ export function initAnalytics(page) {
     window._top100q.push(()=>{
       try{
         // USER_ACTION [RAMBLER]: включите соответствующие расширенные возможности в кабинете.
-        window.top100Counter=new window.top100({project:c.rambler.id,userId:id,attributes_dataset:['forge-block'],chapters:[page]})
-        window.top100Counter.sendCustomVars({page_group:page})
+        window.top100Counter=new window.top100({
+          project:c.rambler.id,userId:id,attributes_dataset:['forge-block'],chapters:[page],
+          widgetColor: /^[a-f\d]{6}$/i.test(c.rambler.widgetColor || '') ? c.rambler.widgetColor : 'fe9200',
+        })
+        // Виджет рисует официальный SDK. Его ошибка не должна мешать событиям.
+        if(!safeImage(c.rambler.badgeUrl) && document.getElementById(ramblerWidgetID)){
+          try{window.top100Counter.drawLogoTo(ramblerWidgetID)}
+          catch(e){if(c.debug)console.warn('Виджет Рамблер недоступен',e)}
+        }
+        // Совместимость с версиями SDK, где ещё доступен sendCustomVars.
+        try{window.top100Counter.sendCustomVars?.({page_group:page})}catch{}
         pending.splice(0).forEach(event=>window.top100Counter.trackEvent(event.name,event.params))
       }catch(e){if(c.debug)console.warn('Ошибка инициализации Рамблер',e)}
     })
@@ -67,7 +77,7 @@ export function badges() {
   try{site=new URL(window.FORGE_CONFIG?.siteUrl||location.href).hostname}catch{}
   return [
     {name:'LiveInternet',enabled:!!c.liveInternet?.enabled,href:safeImage(c.liveInternet?.statUrl)||'https://www.liveinternet.ru/stat/'+encodeURIComponent(site)+'/',src:'https://counter.yadro.ru/logo?'+(/^\d+\.\d+$/.test(c.liveInternet?.badgeStyle||'')?c.liveInternet.badgeStyle:'11.6')},
-    {name:'Рамблер/Топ-100',enabled:validID(c.rambler?.id),href:'https://top100.rambler.ru/'+(validID(c.rambler?.id)?'navi/'+c.rambler.id+'/':''),src:safeImage(c.rambler?.badgeUrl)},
+    {name:'Рамблер/Топ-100',widget:!safeImage(c.rambler?.badgeUrl),enabled:validID(c.rambler?.id),href:'https://top100.rambler.ru/'+(validID(c.rambler?.id)?'navi/'+c.rambler.id+'/':''),src:safeImage(c.rambler?.badgeUrl)},
     {name:'Рейтинг Mail.ru',enabled:validID(c.mail?.id),href:'https://top.mail.ru/'+(validID(c.mail?.id)?'jump?from='+c.mail.id:''),src:safeImage(c.mail?.badgeUrl)},
   ]
 }
