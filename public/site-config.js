@@ -19,8 +19,10 @@ window.FORGE_CONFIG = {
     // USER_ACTION [MAIL]: создайте счётчик на https://top.mail.ru/ и две JS-цели:
     // config_selected и order_created (имена точные). badgeUrl — URL картинки из выданного кода.
     // order_created означает создание учебной заявки в браузере, без отправки владельцу.
-    mail: { id: '3800833', badgeUrl: '' },
-    // USER_ACTION [WIDGETS]: только для Mail скопируйте HTTPS-адрес картинки в badgeUrl.
+    mail: { id: '3800833', badgeUrl: 'https://top-fwz1.mail.ru/counter?id=3800833;t=479;l=1' },
+    // USER_ACTION [MAIL LOGO]: логотип получен из официального генератора для ID 3800833.
+    // При смене счётчика получите новый URL на https://top.mail.ru/code?id=ВАШ_ID
+    // («Код с картинкой» → «Получить код» → img src из кода логотипа, не noscript).
     // Для Rambler картинку рисует SDK; badgeUrl нужен лишь для замены собственным официальным URL.
     debug: false, // true: обезличенные события в консоли для проверки; не отправляет данные само по себе.
   },
