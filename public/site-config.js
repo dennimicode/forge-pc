@@ -10,7 +10,7 @@ window.FORGE_CONFIG = {
     // Для обычного счётчика ID не нужен: сервис определяет сайт по адресу страницы.
     // USER_ACTION [LIVEINTERNET LINK]: скопируйте адрес вашей статистики из кабинета в statUrl.
     // Это особенно важно при регистрации папки username.github.io/repository/.
-    liveInternet: { enabled: false, badgeStyle: '11.6', statUrl: '' },
+    liveInternet: { enabled: true, badgeStyle: '52.7', statUrl: 'https://www.liveinternet.ru/stat/dennimicode.github.io/index.html' },
     // USER_ACTION [RAMBLER]: создайте счётчик на https://top100.rambler.ru/ и впишите project ID.
     // Включите рейтинг и расширенные возможности; события config_selected и order_created отметьте как конверсии.
     rambler: { id: '', badgeUrl: '' },
