@@ -2,9 +2,9 @@
 // После изменения настроек повторите публикацию. Значения здесь публичные — секреты запрещены.
 window.FORGE_CONFIG = {
   // USER_ACTION [PAGES]: укажите полный URL сайта, например https://username.github.io/forge-pc/.
-  siteUrl: '',
+  siteUrl: 'https://dennimicode.github.io/forge-pc/',
   // USER_ACTION [COMPANY]: замените учебные данные компании на реальные перед коммерческим запуском.
-  company: { email: '', phone: '', address: '', hours: 'Пн–Пт, 10:00–19:00' },
+  company: { email: 'support@forge-pc.ru', phone: '88005553535', address: '100100, Российская Федерация, ул. Максима Койкого, д. 123, пом. 12', hours: 'Пн–Пт, 10:00–18:00' },
   analytics: {
     // USER_ACTION [LIVEINTERNET]: зарегистрируйте URL на https://www.liveinternet.ru/add.
     // Для обычного счётчика ID не нужен: сервис определяет сайт по адресу страницы.
